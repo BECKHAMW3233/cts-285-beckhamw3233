@@ -19,35 +19,37 @@ Search command: `grep -rn "SEARCH WORD" --include=*.py .`
 
 ## Part 2. What the program remembered [S1]
 
-After the restart, what did the program remember? the program recalled due to the json file the last attempt but would not let you continue past until you completed both attempts adn viewthe report
+After the restart, what did the program remember? It remembered my first wrong answer, 55, so practice resumed at Try 2.
 
-Which file made that possible? dataman_.json
+Which file made that possible? `dataman_store.json`.
 
 ## Part 3. The interface change [S1]
 
-What did you change in `app.py`? you changed a output the program gives the user 
+What did you change in `app.py`? I changed the retry message shown after a wrong first answer.
 
-Why did no test need to change? nohting was changed as to hwo the program acutaly runs its supericial change that is more for user interface to replicate the original product
+Why did no test need to change? The business rules and data behavior stayed the same; only interface text changed.
 
 ## Part 4. The rule in the real library [S2]
 
-The same 10-problem rule exists in the real library. Write the file and the function name. TODO
+The rule is in `dataman/logic.py`, in `MemoryBank.add_problem`.
 
 ## Part 5. The red test [S2]
 
-With the rule removed from the library, what did the screen show? TODO
+Before removing the rule, my guess is that `test_eleventh_problem_is_refused` will fail.
 
-With the rule removed, which test failed? TODO
+With the rule removed from the library, the screen showed `Added. Set holds 11.`
+
+With the rule removed, `tests/test_logic.py::test_eleventh_problem_is_refused` failed. My guess was correct.
 
 ## Part 6. The data swap [S2]
 
-A real database would replace which file? TODO
+A real database would replace `dataman/store.py`.
 
-Which file holds the rules and does not change when the database changes? TODO
+`dataman/logic.py` holds the rules and does not need to change when the database changes.
 
 ## Reflection [S2]
 
-Write 3 to 5 sentences. Pick one layer. Say what you changed in it. Say what stayed the same in the other two layers. TODO
+I changed the interface layer in `app.py` by updating the retry message and making JSON storage the default. The business rules in `dataman/logic.py` stayed the same in the final version. The data layer in `dataman/store.py` also stayed the same and still provides both memory and JSON stores. Changing the default did not change how attempts are saved or when answers are revealed.
 
 ## Beta feedback (optional)
 
