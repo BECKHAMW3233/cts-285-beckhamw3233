@@ -19,15 +19,15 @@ Search command: `grep -rn "SEARCH WORD" --include=*.py .`
 
 ## Part 2. What the program remembered [S1]
 
-After the restart, what did the program remember? TODO
+After the restart, what did the program remember? the program recalled due to the json file the last attempt but would not let you continue past until you completed both attempts adn viewthe report
 
-Which file made that possible? TODO
+Which file made that possible? dataman_.json
 
 ## Part 3. The interface change [S1]
 
-What did you change in `app.py`? TODO
+What did you change in `app.py`? you changed a output the program gives the user 
 
-Why did no test need to change? TODO
+Why did no test need to change? nohting was changed as to hwo the program acutaly runs its supericial change that is more for user interface to replicate the original product
 
 ## Part 4. The rule in the real library [S2]
 
