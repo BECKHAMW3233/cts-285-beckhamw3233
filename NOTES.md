@@ -10,10 +10,10 @@ Write your prediction before you open any code. Then search. In the last column,
 
 | Action | Search word | My prediction (file) | Files found and what each does |
 |---|---|---|---|
-| Prints "Not yet. Try again." | `Not yet` | TODO | TODO |
-| Decides that the second miss shows the answer | `reveal` | TODO | TODO |
-| Saves one attempt | `save_attempt` | TODO | TODO |
-| Refuses the 11th problem | `SetFull` | TODO | TODO |
+| Prints "Not yet. Try again." | `Not yet` | `app.py` | `app.py` prints the retry message in the command-line interface. |
+| Decides that the second miss shows the answer | `reveal` | `dataman/logic.py` | `app.py` displays a revealed answer; `dataman/logic.py` decides when to reveal it; `tests/test_logic.py` tests that the second miss reveals it. |
+| Saves one attempt | `save_attempt` | `dataman/store.py` | `dataman/logic.py` calls `save_attempt` when an answer is submitted; `dataman/store.py` records attempts in memory or JSON. |
+| Refuses the 11th problem | `SetFull` | `dataman/logic.py` | `app.py` catches and displays `SetFull`; `dataman/logic.py` defines it and enforces the 10-problem limit; `exercise/bank.py` is the Segment 2 practice implementation; `exercise/test_bank.py` tests its limit; `tests/test_logic.py` tests the library limit. |
 
 Search command: `grep -rn "SEARCH WORD" --include=*.py .`
 
